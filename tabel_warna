@@ -1,1 +1,31 @@
-
+<html>
+<head>
+	<title>Tugas 1 Webstatis</title>
+	<style>
+		.tbl{margin: 0px; padding: 0px;}		/*Untuk Table*/
+		.tbl th{margin: 0px; padding: 10px;}	/*Untuk Judul*/
+		.tbl td{border: 1px solid #555;}
+		.tbl td.warnaa{background: #ffffff;} 	/*warna A*/
+		.tbl td.warnab{background: #d2d2d2;} 	/*warna B*/
+	</style>
+</head>
+<body>
+<?php
+	$NIM=array(12141372,12141373,12141374,12141375,12141376,12141377,12141378,12141379,12141380,12141381);
+	$nama=array("Ade Irma","Suci Susanti","Ahmad Darojat","Si Fulan","Melly Gofast","Asyad","Adi Tambora","SOhib Alamin","Sihnurdiyanto","Suratijo");
+	// Start Tables
+	echo "<table class=\"tbl\" padding=\"0\" margin=\"0\" border=\"0\">";						// Open Tables
+		echo "<th width=\"30\">No.</th><th width=\"200\">NIM</th><th width=\"400\">Nama</th>";	// Untuk Header masing-masing kolom (No, NIM, dan Nama)
+	for($row_table=0;$row_table<10;$row_table++)
+	{
+		echo "<tr>";		// Untuk membuka Row (Baris)
+			if($row_table %2)	// Jika $row_table genap (habis d bagi2), makan menjalankan warna B dan colspan
+				echo "<td colspan=\"3\" class=\"warnab\">$row_table. $NIM[$row_table] - $nama[$row_table]</td>";
+			else				// Jika $row_table ganjil, makan menjalankan warna A tanpa colspan
+				echo "<td class=\"warnaa\">$row_table</td><td>$NIM[$row_table]</td><td>$nama[$row_table]</td>";
+		echo "</tr>";		// Menutup Row (Baris)
+	}
+	echo "</table>"; // Close Tables
+?>
+</body>
+</html>
